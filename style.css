@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+body {
+  font-family: "Open Sans", sans-serif;
+}
+.description {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+.option {
+  cursor: pointer;
+  text-align: center;
+  font-size: 30px;
+  padding: 4px;
+}
+.option:hover {
+  font-size: 35px;
+}

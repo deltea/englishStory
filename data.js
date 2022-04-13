@@ -10,7 +10,7 @@ const data = {
     options: ["Forest", "House", "Meadows"]
   },
   "Forest": {
-    description: "The first option!",
+    description: "Spooky forest. End of sentence.",
     options: ["Mountains", "Collect pile of leaves"]
   },
   "House": {

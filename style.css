@@ -4,8 +4,9 @@ body {
 }
 .description {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 0px;
   margin-bottom: 80px;
+  padding: 50px;
 }
 .option {
   cursor: pointer;

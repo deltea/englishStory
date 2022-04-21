@@ -24,12 +24,24 @@ function updateScene(scene) {
 
   // Add the options
   for (var i = 0; i < sceneData.options.length; i++) {
-    let option = document.getElementById(`option${i + 1}`);
-    option.style.display = "block";
-    option.innerText = sceneData.options[i];
-    option.sceneId = i;
-    option.onclick = () => {
-      updateScene(sceneData.options[option.sceneId]);
+    if (sceneData.options[option.sceneId].hasOwnProperty("item")) {
+      if (inventory.includes(sceneData.options[option.sceneId].item)) {
+        let option = document.getElementById(`option${i + 1}`);
+        option.style.display = "block";
+        option.innerText = sceneData.options[i];
+        option.sceneId = i;
+        option.onclick = () => {
+          updateScene(sceneData.options[option.sceneId].location);
+        }
+      }
+    } else {
+      let option = document.getElementById(`option${i + 1}`);
+      option.style.display = "block";
+      option.innerText = sceneData.options[i];
+      option.sceneId = i;
+      option.onclick = () => {
+        updateScene(sceneData.options[option.sceneId].location);
+      }
     }
   }
 

@@ -5,7 +5,7 @@ The main code for English Story.
 *^*^*^*^*^*^*^*/
 
 // Variables
-let currentScene = "Mountains";
+let currentScene = "Forest";
 let inventory = [];
 
 // Update the scene
@@ -24,11 +24,11 @@ function updateScene(scene) {
 
   // Add the options
   for (var i = 0; i < sceneData.options.length; i++) {
-    if (sceneData.options[option.sceneId].hasOwnProperty("item")) {
-      if (inventory.includes(sceneData.options[option.sceneId].item)) {
+    if (sceneData.options[i].hasOwnProperty("item")) {
+      if (inventory.includes(sceneData.options[i].item)) {
         let option = document.getElementById(`option${i + 1}`);
         option.style.display = "block";
-        option.innerText = sceneData.options[i];
+        option.innerText = sceneData.options[i].name;
         option.sceneId = i;
         option.onclick = () => {
           updateScene(sceneData.options[option.sceneId].location);
@@ -37,7 +37,7 @@ function updateScene(scene) {
     } else {
       let option = document.getElementById(`option${i + 1}`);
       option.style.display = "block";
-      option.innerText = sceneData.options[i];
+      option.innerText = sceneData.options[i].name;
       option.sceneId = i;
       option.onclick = () => {
         updateScene(sceneData.options[option.sceneId].location);
@@ -47,6 +47,7 @@ function updateScene(scene) {
 
   // Collect the item if there is one
   if (sceneData.hasOwnProperty("item")) {
+    alert(`You now have a ${sceneData.item}!`);
     inventory.push(sceneData.item);
     console.log(inventory);
   }

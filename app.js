@@ -5,7 +5,7 @@ The main code for English Story.
 *^*^*^*^*^*^*^*/
 
 // Variables
-let currentScene = "Forest";
+let currentScene = "Tyler's Room";
 let inventory = [];
 
 // Update the scene
